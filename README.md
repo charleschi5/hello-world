@@ -1,2 +1,2 @@
-# hello-world
-My name is charles ji and I'm from South Korea.
+# Linkedin Clone
+React frontend, Node.js backend, and MongoDB Atlas DB.
