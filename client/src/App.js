@@ -3,8 +3,17 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
+import React, { useEffect, useState } from 'react';
 
 function App() {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+
+  useEffect(() => {
+    const token = user?.token;
+
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -16,8 +25,8 @@ function App() {
             path="/home"
             element={
               <>
-                <Header />
-                <Home />
+                <Header user={user} setUser={setUser} />
+                <Home user={user} setUser={setUser} />
               </>
             }
           />
